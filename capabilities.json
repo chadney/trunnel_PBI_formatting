@@ -1,0 +1,196 @@
+{
+    "sorting": {
+        "default": {}
+    },
+    "dataRoles": [
+        {
+            "displayName": "Category",
+            "name": "category",
+            "kind": "Grouping",
+            "requiredTypes": [
+                {
+                    "text": true
+                },
+                {
+                    "numeric": true
+                }
+            ],
+            "description": "Category"
+        },
+        {
+            "displayName": "Sort By",
+            "name": "sortBy",
+            "kind": "Grouping",
+            "requiredTypes": [
+                {
+                    "text": true
+                },
+                {
+                    "numeric": true
+                }
+            ],
+            "description": "Sort by"
+        },
+        {
+            "displayName": "Measure",
+            "name": "measure",
+            "kind": "Measure",
+            "description": "Measure"
+        }
+    ],
+    "dataViewMappings": [
+        {
+            "conditions": [
+                {
+                    "category": {
+                        "max": 1
+                    },
+                    "sortBy": {
+                        "max": 1
+                    },
+                    "measure": {
+                        "max": 1
+                    }
+                }
+            ],
+            "categorical": {
+                "categories": {
+                    "select": [
+                        {
+                            "bind": {
+                                "to": "category"
+                            }
+                        },
+                        {
+                            "bind": {
+                                "to": "sortBy"
+                            }
+                        }
+                    ]
+                },
+                "values": {
+                    "bind": {
+                        "to": "measure"
+                    }
+                }
+            }
+        }
+    ],
+    "objects": {
+        "dimensions": {
+            "displayName": "Dimensions",
+            "properties": {
+                "trunkWidth": {
+                    "displayName": "Trunk Width",
+                    "description": "The width of the trunk.",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "trunkHeight": {
+                    "displayName": "Trunk Height",
+                    "description": "The height of the trunk.",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "leavesHeight": {
+                    "displayName": "Leaves Height",
+                    "description": "The height of the leaves.",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "leavesCount": {
+                    "displayName": "Leaves Count",
+                    "description": "The number of items to terminate as leaves.",
+                    "type": {
+                        "numeric": true
+                    }
+                }
+            }
+        },
+
+        "colours": {
+
+            "displayName": "Colours",
+            "properties": {
+                "startColour": {
+                    "displayName": "Start Colour",
+                    "description": "Start colour.",
+                    "type": {
+                        "fill": {"solid": {"color":true}}
+                    }
+                },
+                "endColour": {
+                    "displayName": "End Colour",
+                    "description": "End colour.",
+                    "type": {
+                        "fill": {"solid": {"color":true}}
+                    }
+                }
+            }
+        },
+
+        "leftAxis": {
+
+            "displayName": "Left Axis",
+            "properties": {
+                "show": {
+                    "displayName": "Show",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "leftAxisWidth": {
+                    "displayName": "Width",
+                    "description": "The width of the left axis.",
+                    "type": {
+                        "numeric": true
+                    }
+                }
+            }
+        },
+
+        "rightAxis": {
+
+            "displayName": "Right Axis",
+            "properties": {
+                "show": {
+                    "displayName": "Show",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "rightAxisWidth": {
+                    "displayName": "Width",
+                    "description": "The width of the right axis.",
+                    "type": {
+                        "numeric": true
+                    }
+                }
+            }
+        },
+
+        "topAxis": {
+
+            "displayName": "Top Axis",
+            "properties": {
+                "show": {
+                    "displayName": "Show",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "topAxisHeight": {
+                    "displayName": "Height",
+                    "description": "The height of the top axis.",
+                    "type": {
+                        "numeric": true
+                    }
+                }
+            }
+        }
+
+    }
+}
